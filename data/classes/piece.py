@@ -1,0 +1,28 @@
+class Piece:
+    def __init__(self, pieceType, colorIndex):
+        self.pieceType = ['Frog', 'Turtle', 'Snake', 'Gator'][pieceType]
+        self.color = ['Red', 'Blue', 'Yellow'][colorIndex]
+        self.position = (1, 1)
+        self.movementPattern = [self.frog, self.turtle, self.snake, self.gator][pieceType]
+
+
+    def __str__(self):
+        return f"{self.color} {self.pieceType}"
+
+    def __repr__(self):
+        return f"{self.color} {self.pieceType}"
+    
+    def move(self, Board):
+        self.movementPattern(Board)
+    
+    def frog(self, Board):
+        return
+    
+    def turtle(self, Board):
+        return
+
+    def snake(self, Board):
+        return
+    
+    def gator(self, Board):
+        return
