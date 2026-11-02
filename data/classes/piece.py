@@ -14,15 +14,3 @@ class Piece:
     
     def move(self, Board):
         self.movementPattern(Board)
-    
-    def frog(self, Board):
-        return
-    
-    def turtle(self, Board):
-        return
-
-    def snake(self, Board):
-        return
-    
-    def gator(self, Board):
-        return

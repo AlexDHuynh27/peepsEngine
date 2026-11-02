@@ -14,6 +14,8 @@ class Board:
         self.shack = (1,1)
         self.star = (3,3)
 
+        self.deck = self.generateDeck()
+
         #Drawing Related
         self.tileDistance = length % (4 *(self.tile_radius * 2)) # 50 is the radius change this
 
@@ -99,6 +101,12 @@ class Board:
                 tile.draw(display)
 
         return
+
+    def adjustTurnOrder(self):
+        return
+    
+    def generateDeck(self):
+        
 
 
                         

@@ -41,12 +41,12 @@ class Tile:
             raise ValueError("Impossible: the circles' total area exceeds the container's.")
 
         min_dist_sq = (2 * r) ** 2
-        max_center_dist = R - r      # keeps each circle fully inside the container
-        cell = 2 * r                 # grid cell size for fast neighbour lookup
+        max_center_dist = R - r      
+        cell = 2 * r                 
 
         for _ in range(restarts):
             centres = []
-            grid = {}                # (cell_x, cell_y) -> list of centres in that cell
+            grid = {}               
             failed = False
 
             for _ in range(n):
