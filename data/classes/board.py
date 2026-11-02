@@ -9,12 +9,7 @@ class Board:
         self.width = length
         self.height = length
         self.tile_radius = (length / 5 - 20) // 2
-        self.turnOrder = random.shuffle(players)
-        self.meatstick = (1, 1)
-        self.shack = (1,1)
-        self.star = (3,3)
-
-        self.deck = self.generateDeck()
+        
 
         #Drawing Related
         self.tileDistance = length % (4 *(self.tile_radius * 2)) # 50 is the radius change this
@@ -53,6 +48,14 @@ class Board:
                     self.grid[i][j]
                     )) 
 
+        #gamelogic
+        self.turnOrder = random.shuffle(players)
+        self.meatstick = (1, 1)
+        self.shack = (1,1)
+        self.star = (3,3)
+
+        self.deck = self.generateDeck()
+
     
     def __str__(self):
         s = ''
@@ -85,6 +88,9 @@ class Board:
                 board[i][j] = tilePieces
 
         return board
+    
+    def generateDeck(self):
+        return
 
     def chooseColor(self, pieceType):
         selectionBase = self.tileAllocation[pieceType]
@@ -105,8 +111,8 @@ class Board:
     def adjustTurnOrder(self):
         return
     
-    def generateDeck(self):
-        
+    
+
 
 
                         

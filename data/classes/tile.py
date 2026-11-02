@@ -11,10 +11,12 @@ class Tile:
         self.absY = absY
         self.radius = radius
         self.pieces = startingPieces
+        
+        self.pieceRadius = 20
+
         self.home = None
         self.playerOn = False
         self.piecesMoved = True
-        self.pieceRadius = 20
 
     def __str__(self):
         return "Tile"
@@ -81,3 +83,7 @@ class Tile:
             f"Couldn't fit {n} circles of radius {r} in radius {R}. "
             "Try fewer/smaller circles or a bigger container."
         )
+    
+    def triggerMove(self, board):
+        for piece in pieces:
+            piece.move(board)
