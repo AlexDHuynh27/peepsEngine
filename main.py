@@ -2,9 +2,9 @@ import pygame
 from data.classes.board import Board
 
 pygame.init()
-WINDOW_SIZE = (600, 600)
+WINDOW_SIZE = (1000, 1000)
 screen = pygame.display.set_mode(WINDOW_SIZE)
-board = Board(600, ['hi', 'forest'])
+board = Board(1000, ['hi', 'forest'])
 
 def draw(display):
     board.draw(display)

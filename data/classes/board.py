@@ -45,8 +45,8 @@ class Board:
                 self.tileBoard[i].append(Tile(
                     i, 
                     j, 
-                    length/5 * (i+1), 
-                    length/5 * (j+1), 
+                    length/5 * (4-i), 
+                    length/5 * (4-j), 
                     self.tile_radius,
                     self.grid[i][j]
                     )) 
