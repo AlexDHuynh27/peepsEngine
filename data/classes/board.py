@@ -1,21 +1,22 @@
 import numpy as np
 import random
 from data.classes.piece import Piece
-
+from data.classes.tile import Tile
 
 
 class Board:
     def __init__(self, length, players):
         self.width = length
         self.height = length
-        self.tile_radius = length // 16
+        self.tile_radius = (length / 5 - 20) // 2
         self.turnOrder = random.shuffle(players)
         self.meatstick = (1, 1)
         self.shack = (1,1)
         self.star = (3,3)
 
         #Drawing Related
-        self.tileDistance = length % (self.tile_radius * 2) # 50 is the radius change this
+        self.tileDistance = length % (4 *(self.tile_radius * 2)) # 50 is the radius change this
+
 
 
         # Everything Board Logic Related
@@ -38,12 +39,17 @@ class Board:
             ['tf','ts','tg','ts'],
         ]
         self.grid = self.generateTiles()
-        self.tileBoard = []
-        for row in self.grid:
-            self.tileBoard = row[0]
-
-
-        
+        self.tileBoard = [[],[],[],[]]
+        for i in range(4):
+            for j in range(4):
+                self.tileBoard[i].append(Tile(
+                    i, 
+                    j, 
+                    length/5 * (i+1), 
+                    length/5 * (j+1), 
+                    self.tile_radius,
+                    self.grid[i][j]
+                    )) 
 
     
     def __str__(self):
@@ -87,6 +93,11 @@ class Board:
         return color_index
 
     def draw(self, display):
+        for tileRow in self.tileBoard:
+            for tile in tileRow:
+                
+                tile.draw(display)
+
         return
 
 
